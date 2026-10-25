@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -27,17 +28,14 @@ html, body {
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 2.2rem;
-  padding: 2rem;
+  gap: 35px;
+  padding: 32px;
   align-content: space-around;
   justify-content: space-around;
-  font-size: 1.6rem;
+  font-size: 26px;
   color: gold;
   opacity: 0.07;
   transition: opacity 1.2s;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 .scene-dark {
   position: fixed;
@@ -53,9 +51,6 @@ html, body {
 .scene-lit .portal-hint {
   opacity: 1;
 }
-.scene-lit .portal-spell-torch {
-  filter: drop-shadow(0 0 8px darkorange);
-}
 .scene-lit .portal {
   border-color: goldenrod;
   box-shadow: 0 0 90px darkorange;
@@ -64,55 +59,54 @@ html, body {
 .portal {
   position: relative;
   z-index: 2;
-  width: min(92vw, 400px);
-  padding: 2.2rem 1.8rem;
-  background: linear-gradient(160deg, midnightblue, black);
-  border: 1px solid dimgray;
+  min-width: 400px;
+  padding: 35px 29px;
+  background: darkblue;
+  border: 1px solid gray;
   border-radius: 14px;
   box-shadow: 0 0 60px black;
   text-align: center;
   transition: box-shadow 1s, border-color 1s;
 }
 .portal-title {
-  margin: 0 0 0.3rem;
-  font-size: 1.7rem;
+  margin: 0 0 5px;
+  font-size: 27px;
   letter-spacing: 0.12em;
   color: gold;
   text-shadow: 0 0 14px gold;
 }
 .portal-subtitle {
-  margin: 0 0 1.6rem;
+  margin: 0 0 26px;
   color: gray;
 }
 .portal-name {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 .portal-spell {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 .portal-spell-torch {
   position: absolute;
-  right: 0.5rem;
-  top: 50%;
+  right: 8px;
+  top: 20%;
   width: 34px;
   height: 34px;
-  transform: translateY(-50%);
   cursor: pointer;
-  transition: filter 0.4s, transform 0.2s;
+  transition: transform 0.2s;
 }
 .portal-spell-torch:hover {
-  transform: translateY(-50%) scale(1.12);
+  transform: scale(1.12);
 }
 .portal-name-input, .portal-spell-input {
   width: 100%;
-  padding: 0.85rem 3rem 0.85rem 1rem;
+  padding: 14px 48px 14px 16px;
   background: black;
-  border: 1px solid dimgray;
+  border: 1px solid gray;
   border-radius: 8px;
   color: wheat;
   font: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   letter-spacing: 0.06em;
   outline: none;
 }
@@ -122,9 +116,9 @@ html, body {
 }
 .portal-button {
   width: 100%;
-  margin-top: 0.6rem;
-  padding: 0.9rem;
-  background: linear-gradient(saddlebrown, maroon);
+  margin-top: 10px;
+  padding: 14px;
+  background: linear-gradient(brown, darkorange);
   border: 1px solid gold;
   border-radius: 8px;
   color: white;
@@ -139,27 +133,8 @@ html, body {
 }
 .portal-hint {
   min-height: 2.6em;
-  margin: 1.1rem 0 0;
-  font-size: 0.95rem;
+  margin: 18px 0 0;
+  font-size: 15px;
   color: darkorange;
   opacity: 0;
-  transition: opacity 1s;
-}
-.portal-shake {
-  animation: shake 0.45s;
-}
-
-@keyframes shake {
-  20% {
-    transform: translateX(-12px);
-  }
-  40% {
-    transform: translateX(12px);
-  }
-  60% {
-    transform: translateX(-8px);
-  }
-  80% {
-    transform: translateX(8px);
-  }
 }

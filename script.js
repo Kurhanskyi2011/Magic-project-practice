@@ -6,7 +6,7 @@ const darkLayer = document.querySelector('.scene-dark')
 
 let clicks = 1
 let seekerName = 'admin'
-let seekerSpell = 'qwerty'
+let seekerSpell = '1564'
 
 portal.addEventListener('submit',function(e){
     e.preventDefault()
@@ -15,10 +15,7 @@ portal.addEventListener('submit',function(e){
         portal.setAttribute('action','./treasure.html')
         portal.submit()
     } else {
-        alert('Невірне заклинання! Портал заблоковано')
-        portal.classList.remove('portal-shake')
-        void portal.offsetWidth
-        portal.classList.add('portal-shake')
+        alert('Невірне заклинання! Портал не відкрито')
     }
 })
 
@@ -37,7 +34,19 @@ portalTorch.addEventListener('click',function(){
     }
 })
 
-// ===== Світло за курсором / пальцем =====
+
+
+
+
+
+
+
+
+
+
+
+
+// Ші код, який я питав
 function moveLight(x, y) {
     darkLayer.style.setProperty('--mx', x + 'px')
     darkLayer.style.setProperty('--my', y + 'px')
@@ -46,7 +55,7 @@ window.addEventListener('mousemove', (e) => moveLight(e.clientX, e.clientY))
 window.addEventListener('touchmove', (e) => moveLight(e.touches[0].clientX, e.touches[0].clientY), { passive: true })
 moveLight(innerWidth / 2, innerHeight / 2)
 
-// ===== Іскри =====
+
 const cvs = document.querySelector('.scene-embers')
 const ctx = cvs.getContext('2d')
 const sparks = []

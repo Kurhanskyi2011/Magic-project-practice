@@ -6,10 +6,83 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: Georgia, serif;
   color: white;
   overflow: hidden;
-  background: linear-gradient(rgba(10, 4, 30, 0.5), rgba(10, 4, 30, 0.75)), url("/background.jpg") center/cover, radial-gradient(circle at 50% 30%, #3b1b6e, #0b0420 70%);
+  background: url("/background.jpg");
+}
+
+body {
+  background-color: #0d0b1a;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.magic-card {
+  background-color: #151025;
+  border: 2px solid #ff7518;
+  border-radius: 16px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 0 20px #ff7518;
+  text-align: center;
+  color: #f0e6d2;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.magic-card:hover {
+  box-shadow: 0 0 30px #8a2be2;
+}
+.magic-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #8a2be2;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.magic-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff9933;
+  margin-bottom: 10px;
+}
+.magic-desc {
+  font-size: 13px;
+  color: #bfa1cf;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.magic-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.magic-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+.magic-btn {
+  background-color: #ff7518;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+.magic-btn:hover {
+  background-color: #ff4500;
 }
