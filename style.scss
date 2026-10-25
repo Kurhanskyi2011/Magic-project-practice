@@ -1,0 +1,165 @@
+* { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: wheat;
+    font-family: 'Noteworthy-Light', sans-serif;
+    overflow: hidden;
+
+    &-embers {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+    }
+
+    &-runes {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.2rem;
+        padding: 2rem;
+        align-content: space-around;
+        justify-content: space-around;
+        font-size: 1.6rem;
+        color: gold;
+        opacity: 0.07;
+        transition: opacity 1.2s;
+        user-select: none;
+    }
+
+    &-dark {
+        position: fixed;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        opacity: 0.92;
+        background: radial-gradient(
+            circle var(--r, 140px) at var(--mx, 50%) var(--my, 50%),
+            transparent 0,
+            black 100%
+        );
+    }
+
+
+    &-lit {
+        .scene-runes { opacity: 0.5; }
+        .portal-hint { opacity: 1; }
+        .portal-spell-torch { filter: drop-shadow(0 0 8px darkorange); }
+        .portal {
+            border-color: goldenrod;
+            box-shadow: 0 0 90px darkorange;
+        }
+    }
+}
+
+.portal {
+    position: relative;
+    z-index: 2;
+    width: min(92vw, 400px);
+    padding: 2.2rem 1.8rem;
+    background: linear-gradient(160deg, midnightblue, black);
+    border: 1px solid dimgray;
+    border-radius: 14px;
+    box-shadow: 0 0 60px black;
+    text-align: center;
+    transition: box-shadow 1s, border-color 1s;
+
+    &-title {
+        margin: 0 0 0.3rem;
+        font-size: 1.7rem;
+        letter-spacing: 0.12em;
+        color: gold;
+        text-shadow: 0 0 14px gold;
+    }
+
+    &-subtitle {
+        margin: 0 0 1.6rem;
+        color: gray;
+    }
+
+    &-name {
+        margin-bottom: 1rem;
+    }
+
+    &-spell {
+        position: relative;
+        margin-bottom: 1rem;
+
+        &-torch {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            width: 34px;
+            height: 34px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: filter 0.4s, transform 0.2s;
+
+            &:hover { transform: translateY(-50%) scale(1.12); }
+        }
+    }
+
+    &-name-input,
+    &-spell-input {
+        width: 100%;
+        padding: 0.85rem 3rem 0.85rem 1rem;
+        background: black;
+        border: 1px solid dimgray;
+        border-radius: 8px;
+        color: wheat;
+        font: inherit;
+        font-size: 1rem;
+        letter-spacing: 0.06em;
+        outline: none;
+
+        &:focus {
+            border-color: gold;
+            box-shadow: 0 0 12px gold;
+        }
+    }
+
+    &-button {
+        width: 100%;
+        margin-top: 0.6rem;
+        padding: 0.9rem;
+        background: linear-gradient(saddlebrown, maroon);
+        border: 1px solid gold;
+        border-radius: 8px;
+        color: white;
+        font: inherit;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        cursor: pointer;
+        transition:  transform 0.1s;
+
+        &:active { transform: scale(0.98); }
+    }
+
+    &-hint {
+        min-height: 2.6em;
+        margin: 1.1rem 0 0;
+        font-size: 0.95rem;
+        color: darkorange;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    &-shake { animation: shake 0.45s; }
+}
+
+@keyframes shake {
+    20% { transform: translateX(-12px); }
+    40% { transform: translateX(12px); }
+    60% { transform: translateX(-8px); }
+    80% { transform: translateX(8px); }
+}

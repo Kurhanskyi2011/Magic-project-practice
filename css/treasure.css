@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(rgba(10, 4, 30, 0.5), rgba(10, 4, 30, 0.75)), url("/background.jpg") center/cover, radial-gradient(circle at 50% 30%, #3b1b6e, #0b0420 70%);
+}
